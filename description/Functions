@@ -18,3 +18,9 @@ map은 return해줘야한다
     {}를 써주고 return을 쓴다
 argument가 하나일 경우는 ()를 생략해줘도 된다
 argument가 없을 때는 () => ~~형식으로 작성
+
+# this
+arrow function안에 있는 this는 window를 참조한다
+    즉, 바깥의 bubble을 참조한다
+    this를 이벤트로부터 가지고 있지 않는다
+function안에 있는 this는 부모 변수를 가르킨다

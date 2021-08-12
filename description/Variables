@@ -1,0 +1,2 @@
+var => (hoisting), block scope가 없음(오직 function scope만 존재)
+let, const => (do not hoisting) , dead zone, block scope있음

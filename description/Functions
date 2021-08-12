@@ -1,0 +1,20 @@
+const a = funtion(){
+    return ~~;
+}
+이렇게 변수를 활용 해 함수의 이름을 지정하지 않을 수 있다
+
+map은 return해줘야한다
+    무엇을 return하던지 새로운 array로 추가된다
+    map function에 arg를 주지않아도 map은 각 item을 넘겨줌
+        따라서 받는 함수에는 arg를 줘야해
+    map function의 두번째 argument는 index이다
+        현재 item이 몇 번째 인지 나타내는 숫자이다
+
+(item) => item + "❤"
+    implicit return한다
+(item) => {item + "❤"}
+    implicit return(한줄에 입력되어 있으면 return)이 사라지니 주의
+    함수가 길어져서 다른 것들을 추가하게 되면
+    {}를 써주고 return을 쓴다
+argument가 하나일 경우는 ()를 생략해줘도 된다
+argument가 없을 때는 () => ~~형식으로 작성

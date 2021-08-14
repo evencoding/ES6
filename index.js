@@ -1,12 +1,12 @@
-const nico = {
-  name: "Nico",
-  age: 24,
-  addYear: function () {
-    this.age++;
-  },
-};
+class User {
+  constructor(name) {
+    this.username = name;
+  }
+  sayHello() {
+    console.log(`Hello, I'm ${this.username}`);
+  }
+}
 
-console.log(nico);
-nico.addYear();
-nico.addYear();
-console.log(nico);
+const sexyUser = new User("Jungwoo");
+
+sexyUser.sayHello();

@@ -1,11 +1,5 @@
-const friends = [
-  "jungwoo@gmail.com",
-  "zcow@naver.com",
-  "evencoding@gmail.com",
-  "justdoit@yahoo.com",
-  "whoareyou@gorea.com",
-];
+const friends = ["Jungwoo", "donggue", "maki", "ha"];
 
-const a = friends.includes("zcow@naver.com");
-
-console.log(a);
+for (i in friends) {
+  console.log(friends[i]);
+}

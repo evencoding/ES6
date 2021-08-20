@@ -1,5 +1,9 @@
-const friends = ["Jungwoo", "donggue", "maki", "ha"];
+const settings = {
+  color: {
+    theme: "darK",
+  },
+};
 
-for (i in friends) {
-  console.log(friends[i]);
-}
+const { notification: { follow = false } = {} } = settings;
+
+console.log(follow);

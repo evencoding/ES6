@@ -2,7 +2,7 @@
 # Destructuring
     Object나 Array, 그 외 요소들 안의 변수를 바깥으로 끄집어 내서 사용할 수 있도록 하는 것
 -------------------------------------------------------------------------------------------------
-# Object destructuring
+# 5.0 Object Destructuring
     Ex)
     const settings = {
     notification: {
@@ -22,14 +22,52 @@
                                 // follow가 settings 오브젝트 안에 존재하지 않더라도 default값을 줘서 나타낼 수 있다
     console.log(follow, color);
 -------------------------------------------------------------------------------------------------
-# one-line-statement
+# 5.0 one-line-statement
     const { notification: { follow = false } = {} } = settings;
-        settings 오브젝트 안의 notification 안의 follow를 찾고
-        존재하지 않는다면 false 라는 지정된 default 값인 false 로
-        notification 이 존재하지 않는다면 지정된 default 값인 {} 즉 빈 오브젝트가 된다
+        (1) settings 오브젝트 안의 notification 안의 follow를 찾고
+        (2) 존재하지 않는다면 false 라는 지정된 default 값인 false 로
+        (3) notification 이 존재하지 않는다면 지정된 default 값인 {} 즉 빈 오브젝트가 된다
 -------------------------------------------------------------------------------------------------
+# 5.1 Array Destructuring
+    ex) const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        const [mon, tue, wed, name="Jungwoo"] = days;
+        console.log(mon, tue, wed, name); // Mon Tue Wed Jungwoo
+    (1) Object Destructuring 와 같이 default값을 지정해서 배열에 존재하지 않을 때도 작동되게 할 수 있다
+    (2) 함수에서도 적용이 가능하다
+        ex) const days = () => ["Mon", "Tue", "Wed"];
+            const [mon, tue, wed, thu = "Thu"] = days();
+            console.log(mon, tue, wed, thu);
 -------------------------------------------------------------------------------------------------
+# 5.2 Renaming
+    (1) 변수 뒤에 ': 변경할이름' 으로 변수명을 바꿔줄 수 있다
+    (2) Destructuring 을 ()에 감싸서 이미 존재하는 let 변수를 업데이트 할 수 있다
+        ex) const settings = {
+                color: {
+                    chosen_color: "darK",
+                },
+            };
+            let chosenColor = "blue";
+            console.log(chosenColor);  // blue
+            ({
+                color: { chosen_color: chosenColor = "light" },
+            } = settings);
+            console.log(chosenColor);  // dark
 -------------------------------------------------------------------------------------------------
+# 5.3 Function Destructuring
+    ex) function saveSettings({ notification, color: { theme } }) {
+            console.log(theme);
+        }
+
+        saveSettings({
+            notification: {
+                follow: true,
+                alert: true,
+                mkt: true,
+            },
+            color: {
+                theme: "blue",
+            },
+        });
 -------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------

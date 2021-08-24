@@ -1,9 +1,14 @@
-const settings = {
-  color: {
-    theme: "darK",
+function saveSettings({ notification, color: { theme } }) {
+  console.log(theme);
+}
+
+saveSettings({
+  notification: {
+    follow: true,
+    alert: true,
+    mkt: true,
   },
-};
-
-const { notification: { follow = false } = {} } = settings;
-
-console.log(follow);
+  color: {
+    theme: "blue",
+  },
+});

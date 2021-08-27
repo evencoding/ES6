@@ -1,14 +1,6 @@
-function saveSettings({ notification, color: { theme } }) {
-  console.log(theme);
-}
+const as = (firstOne, ...rest) => {
+  console.log(firstOne);
+  console.log(rest);
+};
 
-saveSettings({
-  notification: {
-    follow: true,
-    alert: true,
-    mkt: true,
-  },
-  color: {
-    theme: "blue",
-  },
-});
+as("jungwoo", "good", "25", "runing", "Piano");

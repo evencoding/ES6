@@ -35,6 +35,32 @@
         bestFriendMaker("jungwoo", "maki", "donghee", "nico");
     (5) Rest는 Array를 만든다
 ----------------------------------------------------------------------------------------------
+# 6.3 Rest + Spread + Destructure Magic
+    (1) cleanning Object
+    (2) set defualt
+const user = {
+name: "jungwoo",
+age: 24,
+password: 12345,
+};
+
+user["password"] = null; # === user.password
+
+console.log(user); # { name: 'jungwoo', age: 26, password: null }
+
+const killage = ({ age, ...rest }) => rest;
+
+const cleanuser = killage(user);
+
+console.log(cleanuser); # { name: 'jungwoo', age: 26 }
+
+const setCountry = ({ country = "KR", ...rest }) => ({ country, ...rest });
+
+console.log(setCountry(user)); # { country: 'KR', name: 'jungwoo', age: 26, password: 12345 }
+
+const rename = ({ name: newname, ...rest }) => ({ newname, ...rest });
+
+console.log(rename(user));
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------

@@ -1,6 +1,9 @@
-const as = (firstOne, ...rest) => {
-  console.log(firstOne);
-  console.log(rest);
+const user = {
+  NAME: "jungwoo",
+  age: 26,
+  password: 12345,
 };
 
-as("jungwoo", "good", "25", "runing", "Piano");
+const rename = ({ NAME: name, ...rest }) => ({ name, ...rest });
+
+console.log(rename(user));
